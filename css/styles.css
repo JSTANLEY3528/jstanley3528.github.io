@@ -56,6 +56,11 @@ a {
   color: inherit;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+}
+
 .portfolio-nav {
   backdrop-filter: blur(10px);
   background: var(--nav-bg);
@@ -115,7 +120,8 @@ a {
   text-transform: uppercase;
 }
 
-.hero-section h1 {
+.hero-section h1,
+.case-hero h1 {
   font-size: clamp(2.2rem, 4vw, 4rem);
   margin-bottom: 1rem;
 }
@@ -125,7 +131,8 @@ a {
   max-width: 42rem;
 }
 
-.hero-actions {
+.hero-actions,
+.project-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.9rem;
@@ -138,7 +145,8 @@ a {
 
 .summary-card,
 .content-card,
-.project-card {
+.project-card,
+.gallery-card {
   height: 100%;
   padding: 1.75rem;
   background: var(--surface);
@@ -147,9 +155,14 @@ a {
   box-shadow: var(--shadow);
 }
 
+.gallery-card {
+  padding: 1rem;
+}
+
 .compact-card h3,
 .project-card h3,
-.summary-card h2 {
+.summary-card h2,
+.case-summary h2 {
   margin-bottom: 1rem;
 }
 
@@ -180,6 +193,18 @@ a {
 
 .contact-card p {
   margin-bottom: 0.5rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.6rem;
 }
 
 .btn {
@@ -231,16 +256,19 @@ a {
 
   .summary-card,
   .content-card,
-  .project-card {
+  .project-card,
+  .gallery-card {
     padding: 1.35rem;
   }
 
-  .hero-actions {
+  .hero-actions,
+  .project-actions {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .hero-actions .btn {
+  .hero-actions .btn,
+  .project-actions .btn {
     width: 100%;
   }
 }
